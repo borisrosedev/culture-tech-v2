@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(55, 124, 114);
+    display: flex; /* body becomes a flex container*/
+    min-height: 100vh; /* body height at least is equal to viewport height*/
+    justify-content: center;
+    align-items: center;
+
+    input[type="text"] {
+        &:focus {
+            outline: none;
+        }
+    }
+}
