@@ -1,0 +1,15 @@
+{
+  "name": "culture-tech-boris",
+  "version": "1.0.0",
+  "description": "<h1>Culture Tech V2</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-icons": "^1.13.1"
+  }
+}

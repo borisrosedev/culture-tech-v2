@@ -1,9 +1,10 @@
+
 window.addEventListener('DOMContentLoaded', function(){
 
     /* function body */
 
     const preAnswer = document.getElementById('pre-answer')
-    const generateButton = document.getElementById('generate-button')
+    //const generateButton = document.getElementById('generate-button')
     const stopButton = document.getElementById('stop-button')
 
     // we define a controller to control the answer stream
@@ -28,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function(){
         // we need to remove the preAnswer's content when the request is aborted
         preAnswer.textContent = ''
 
-        const serverResponse = await fetch('/api/generate', {
+        const serverResponse = await fetch('http://127.0.0.1:11434/api/generate', {
             method: 'POST',
             signal,
             headers: {"Content-Type":"application/json"},
@@ -135,14 +136,19 @@ window.addEventListener('DOMContentLoaded', function(){
         }
     }
 
+    let questionInput = document.getElementById('question-input')
     
-    generateButton.addEventListener('click', () => {
+    questionInput.addEventListener('keydown', (e) => {
 
-          const questionInput = document.getElementById('question-input')
-          streamAnswer({
-                model: 'mistral',
-                prompt: questionInput.value
-          })
+        if(!questionInput.value) return
+        if (e.code == "Enter") {
+            questionInput = document.getElementById('question-input')
+            streamAnswer({
+                    model: 'mistral',
+                    prompt: questionInput.value
+            })
+        }
+        
     })
 
     stopButton.addEventListener('click', () => controller.abort())

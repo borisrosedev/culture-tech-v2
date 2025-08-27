@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API-AI</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/styles.css">
-     
+
 </head>
 <body>
 
-
-
-        <input 
-            id="question-input"
-            type="text" 
-            placeholder="qui es-tu ?"
-        >
         <pre id="pre-answer" style="white-space: pre-wrap;"></pre>
-        <button id="generate-button">Generate</button>
-        <button id="stop-button">Stop</button>
+        <section class="flex">
+          <input 
+              id="question-input"
+              type="text" 
+              placeholder="Ask a question"
+          ><button  id="stop-button"><i class="bi bi-stop-circle"></i></button>
 
+        </section>
+    
 
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
