@@ -1,0 +1,18 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: web
+    ports:
+      - "8080:80"                   
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - my-ollama
+    command: [ "nginx", "-g", "daemon off;" ]
+
+  my-ollama:
+    image: ollama/ollama
+    container_name: ollama-service
+    volumes:
+      - ./ollama:/root/.ollama
