@@ -1,13 +1,13 @@
 body {
-    background-color: rgb(55, 124, 114);
+    background-color: rgb(207, 177, 241);
     display: flex; /* body becomes a flex container*/
-    min-height: 100vh; /* body height at least is equal to viewport height*/
+    min-height: 100vh; /* body height at least is equal to viewport height*/   
     justify-content: center;
     align-items: center;
 
     input[type="text"] {
-        &:focus {
+            &:focus {
             outline: none;
-        }
+            }
     }
 }
